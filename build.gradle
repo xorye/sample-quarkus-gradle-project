@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' version '0.25.0'
+}
+
+apply plugin: 'io.quarkus'
+
+group 'quarkustest'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation enforcedPlatform('io.quarkus:quarkus-bom:0.25.0')
+    implementation 'io.quarkus:quarkus-resteasy'
+    testCompile group: 'io.quarkus', name: 'quarkus-junit5', version: '0.25.0'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+}
