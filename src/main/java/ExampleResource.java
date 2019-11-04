@@ -8,6 +8,6 @@ public class ExampleResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "hello";
+        return "hello from Gradle";
     }
 }
